@@ -8,3 +8,4 @@ nltk
 PyJWT
 bcrypt
 pymongo
+feedparser
