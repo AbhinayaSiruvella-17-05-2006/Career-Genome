@@ -15,7 +15,7 @@ function SkillGapClosure() {
     // Fetch roadmap on user load
     React.useEffect(() => {
         if (user?.email) {
-            fetch(`http://127.0.0.1:8000/api/skill-gap/roadmap?email=${user.email}`)
+            fetch(`https://career-genome-python.onrender.com/api/skill-gap/roadmap?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data) setResult(data);
@@ -40,7 +40,7 @@ function SkillGapClosure() {
 
         // Auto-save progress
         if (user?.email) {
-            axios.post("http://127.0.0.1:8000/api/skill-gap/generate", {
+            axios.post("https://career-genome-python.onrender.com/api/skill-gap/generate", {
                 role: result.role,
                 currentSkills: result.currentSkills || "", // Pass existing if stored
                 email: user.email,
@@ -67,7 +67,7 @@ function SkillGapClosure() {
     const handleClearRoadmap = async () => {
         if (!user?.email) return;
         try {
-            await axios.delete(`http://127.0.0.1:8000/api/skill-gap/roadmap?email=${user.email}`);
+            await axios.delete(`https://career-genome-python.onrender.com/api/skill-gap/roadmap?email=${user.email}`);
             setResult(null);
             setRole("");
             setCurrentSkills("");
@@ -87,7 +87,7 @@ function SkillGapClosure() {
             setError("");
 
             const response = await axios.post(
-                "http://127.0.0.1:8000/api/skill-gap/generate",
+                "https://career-genome-python.onrender.com/api/skill-gap/generate",
                 {
                     role,
                     currentSkills,

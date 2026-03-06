@@ -50,7 +50,7 @@ export const UserProvider = ({ children }) => {
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) {
-            fetch('http://127.0.0.1:8000/api/user/profile', {
+            fetch('https://career-genome-python.onrender.com/api/user/profile', {
                 headers: { 'Authorization': `Bearer ${token}` }
             })
                 .then(res => res.json())
@@ -77,7 +77,7 @@ export const UserProvider = ({ children }) => {
             // Save to Backend
             const token = localStorage.getItem('token');
             if (token) {
-                fetch('http://127.0.0.1:8000/api/user/profile', {
+                fetch('https://career-genome-python.onrender.com/api/user/profile', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ const AdminData = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/api/collections')
+        fetch('https://career-genome-python.onrender.com/api/collections')
             .then(res => res.json())
             .then(cols => setCollections(cols))
             .catch(err => console.error("Failed to fetch collections", err));
@@ -17,7 +17,7 @@ const AdminData = () => {
     const fetchData = (colName) => {
         setLoading(true);
         setSelectedCol(colName);
-        fetch(`http://127.0.0.1:8000/api/collection/${colName}`)
+        fetch(`https://career-genome-python.onrender.com/api/collection/${colName}`)
             .then(res => res.json())
             .then(d => {
                 setData(d);

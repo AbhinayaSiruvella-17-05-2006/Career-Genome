@@ -76,7 +76,7 @@ const Readiness = () => {
 
         try {
             // Note: Calling the Python backend on port 5000
-            const response = await axios.post("http://127.0.0.1:5000/career-readiness", formData, {
+            const response = await axios.post("https://career-genome-python.onrender.com/career-readiness", formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

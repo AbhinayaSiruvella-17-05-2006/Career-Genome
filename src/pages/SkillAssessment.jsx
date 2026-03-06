@@ -19,7 +19,7 @@ const SkillAssessment = () => {
         setLoading(true);
         setAnswered(false);
         try {
-            const res = await fetch('http://127.0.0.1:8000/ask', {
+            const res = await fetch('https://career-genome-python.onrender.com/ask', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ topic: "" }) // Skill could be passed here if state 'skill' existed
@@ -71,7 +71,7 @@ const SkillAssessment = () => {
     const saveResults = async () => {
         if (Object.keys(summary).length === 0) return;
         try {
-            await fetch('http://127.0.0.1:8000/ask', {
+            await fetch('https://career-genome-python.onrender.com/ask', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
