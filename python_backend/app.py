@@ -20,7 +20,7 @@ CORS(app)
 # -----------------------------
 # MONGODB CONFIG
 # -----------------------------
-MONGO_URI = "mongodb://localhost:27017/"
+MONGO_URI = os.environ.get("MONGO_URI")
 DB_NAME = "career_genome"
 SECRET_KEY = "supersecretkey" # Change for production
 
