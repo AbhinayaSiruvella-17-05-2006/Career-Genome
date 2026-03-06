@@ -117,7 +117,7 @@ export default function InterviewAvatar() {
     const startInterview = async () => {
         try {
             setProcessing(true);
-            const res = await fetch("http://127.0.0.1:5000/api/interview/start", {
+            const res = await fetch("https://career-genome-python.onrender.com/api/interview/start", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ role: role })
@@ -192,7 +192,7 @@ export default function InterviewAvatar() {
         try {
             setProcessing(true);
             const res = await fetch(
-                "http://127.0.0.1:5000/api/interview/answer",
+                 "https://career-genome-python.onrender.com/api/interview/answer",
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },

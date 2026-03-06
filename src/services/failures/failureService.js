@@ -74,7 +74,7 @@ const detectCategory = (text) => {
 // [NEW] Analyze User's Failure Story via Python Backend
 export const analyzeFailureStory = async (story, email) => {
     try {
-        const response = await fetch('http://127.0.0.1:5000/analyze-failure', {
+        const response = await fetch('https://career-genome-python.onrender.com/analyze-failure', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ story, email })

@@ -69,7 +69,7 @@ const RoadmapGenerator = () => {
     const [activeTab, setActiveTab] = useState("topic");
 
     useEffect(() => {
-        fetch("http://127.0.0.1:5000/api/roles")
+        fetch("https://career-genome-python.onrender.com/api/roles")
             .then(res => res.json())
             .then(data => setRoles(data))
             .catch(err => console.error("Error fetching roles:", err));
@@ -80,7 +80,7 @@ const RoadmapGenerator = () => {
         setIsLoading(true);
         setError("");
         try {
-            const response = await fetch("http://127.0.0.1:5000/api/topic", {
+            const response = await fetch("https://career-genome-python.onrender.com/api/topic", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ topic })
@@ -108,7 +108,7 @@ const RoadmapGenerator = () => {
         setIsLoading(true);
         setError("");
         try {
-            const response = await fetch("http://127.0.0.1:5000/api/role", {
+            const response = await fetch("https://career-genome-python.onrender.com/api/role", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ role: selectedRole })

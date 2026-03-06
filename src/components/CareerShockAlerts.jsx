@@ -16,7 +16,7 @@ const CareerShockAlerts = () => {
         if (isRefresh) setRefreshing(true);
         try {
             // Updated to point to Python backend
-            const response = await fetch('http://127.0.0.1:5000/api/shocks');
+            const response = await fetch('https://career-genome-python.onrender.com/api/shocks');
             if (!response.ok) throw new Error('Failed to fetch alerts');
             const data = await response.json();
             setAlerts(data);
